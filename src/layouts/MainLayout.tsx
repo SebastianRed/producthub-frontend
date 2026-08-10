@@ -1,19 +1,25 @@
-import { NavLink, Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 
-function MainLayout() {
+import Header from "../components/Header/Header";
+import Sidebar from "../components/Sidebar/Sidebar";
+import Footer from "../components/Footer/Footer";
+
+import styles from "./MainLayout.module.css";
+
+export default function MainLayout() {
   return (
-    <>
-      <nav>
-        <NavLink to="/">Home</NavLink>{" | "}
-        <NavLink to="/products">Productos</NavLink>{" | "}
-        <NavLink to="/categories">Categorías</NavLink>
-      </nav>
+    <div className={styles.layout}>
+      <Header />
 
-      <hr />
+      <div className={styles.content}>
+        <Sidebar />
 
-      <Outlet />
-    </>
+        <main className={styles.main}>
+          <Outlet />
+        </main>
+      </div>
+
+      <Footer />
+    </div>
   );
 }
-
-export default MainLayout;
