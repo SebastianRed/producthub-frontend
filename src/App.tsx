@@ -1,7 +1,5 @@
-import AppRouter from "./routes/AppRouter";
-
 function App() {
-  return <AppRouter />;
+    return <h1>ProductHub</h1>;
 }
 
 export default App;
