@@ -1,11 +1,57 @@
 .header {
-  height: 64px;
-  padding: 0 2rem;
+  height: var(--header-height);
 
   display: flex;
   align-items: center;
+  justify-content: space-between;
 
-  background: white;
+  padding: 0 var(--spacing-xl);
 
+  background-color: var(--color-surface);
   border-bottom: 1px solid var(--color-border);
+}
+
+.subtitle {
+  color: var(--color-text-secondary);
+
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.avatar {
+  width: 36px;
+  height: 36px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background-color: var(--color-primary-light);
+  color: var(--color-primary);
+
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.userInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.userName {
+  font-size: 0.8125rem;
+  font-weight: 600;
+}
+
+.userRole {
+  color: var(--color-text-secondary);
+  font-size: 0.75rem;
 }
