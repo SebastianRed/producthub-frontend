@@ -1,4 +1,5 @@
 import styles from "./HomePage.module.css";
+import { AlertTriangle, Boxes, Tags } from "lucide-react";
 
 export default function HomePage() {
   return (
@@ -14,7 +15,9 @@ export default function HomePage() {
         <article className={styles.statCard}>
           <div className={styles.statHeader}>
             <span className={styles.statLabel}>Productos</span>
-            <span className={styles.statIcon}>▣</span>
+            <span className={styles.statIcon}>
+              <Boxes />
+            </span>
           </div>
 
           <strong className={styles.statValue}>128</strong>
@@ -27,7 +30,9 @@ export default function HomePage() {
         <article className={styles.statCard}>
           <div className={styles.statHeader}>
             <span className={styles.statLabel}>Categorías</span>
-            <span className={styles.statIcon}>▦</span>
+            <span className={styles.statIcon}>
+              <Tags />
+            </span>
           </div>
 
           <strong className={styles.statValue}>12</strong>
@@ -41,7 +46,7 @@ export default function HomePage() {
           <div className={styles.statHeader}>
             <span className={styles.statLabel}>Bajo stock</span>
             <span className={`${styles.statIcon} ${styles.warningIcon}`}>
-              !
+              <AlertTriangle />
             </span>
           </div>
 
