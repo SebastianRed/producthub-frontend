@@ -93,12 +93,9 @@
 }
 
 .icon {
-  width: 20px;
-
-  display: flex;
-  justify-content: center;
-
-  font-size: 1.1rem;
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
 }
 
 @media (max-width: 768px) {
