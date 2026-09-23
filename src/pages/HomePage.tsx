@@ -1,5 +1,8 @@
-import styles from "./HomePage.module.css";
 import { AlertTriangle, Boxes, Tags } from "lucide-react";
+
+import StatCard from "../components/StatCard/StatCard";
+
+import styles from "./HomePage.module.css";
 
 export default function HomePage() {
   return (
@@ -12,50 +15,27 @@ export default function HomePage() {
       </header>
 
       <section className={styles.statsGrid}>
-        <article className={styles.statCard}>
-          <div className={styles.statHeader}>
-            <span className={styles.statLabel}>Productos</span>
-            <span className={styles.statIcon}>
-              <Boxes />
-            </span>
-          </div>
+        <StatCard
+          title="Productos"
+          value={128}
+          description="Productos registrados"
+          icon={Boxes}
+        />
 
-          <strong className={styles.statValue}>128</strong>
+        <StatCard
+          title="Categorías"
+          value={12}
+          description="Categorías disponibles"
+          icon={Tags}
+        />
 
-          <span className={styles.statDescription}>
-            Productos registrados
-          </span>
-        </article>
-
-        <article className={styles.statCard}>
-          <div className={styles.statHeader}>
-            <span className={styles.statLabel}>Categorías</span>
-            <span className={styles.statIcon}>
-              <Tags />
-            </span>
-          </div>
-
-          <strong className={styles.statValue}>12</strong>
-
-          <span className={styles.statDescription}>
-            Categorías disponibles
-          </span>
-        </article>
-
-        <article className={styles.statCard}>
-          <div className={styles.statHeader}>
-            <span className={styles.statLabel}>Bajo stock</span>
-            <span className={`${styles.statIcon} ${styles.warningIcon}`}>
-              <AlertTriangle />
-            </span>
-          </div>
-
-          <strong className={styles.statValue}>7</strong>
-
-          <span className={styles.statDescription}>
-            Productos que requieren atención
-          </span>
-        </article>
+        <StatCard
+          title="Bajo stock"
+          value={7}
+          description="Productos que requieren atención"
+          icon={AlertTriangle}
+          variant="warning"
+        />
       </section>
 
       <section className={styles.overview}>
