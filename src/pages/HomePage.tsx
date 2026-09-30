@@ -1,7 +1,7 @@
 import { AlertTriangle, Boxes, Tags } from "lucide-react";
 
 import StatCard from "../components/StatCard/StatCard";
-
+import LowStockTable from "../components/LowStockTable/LowStockTable";
 import styles from "./HomePage.module.css";
 
 export default function HomePage() {
@@ -63,6 +63,8 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      <LowStockTable />
     </div>
   );
 }
