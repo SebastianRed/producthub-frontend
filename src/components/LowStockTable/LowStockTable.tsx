@@ -8,25 +8,13 @@ interface LowStockProduct {
   stock: number;
 }
 
-const products: LowStockProduct[] = [
-  {
-    id: 1,
-    name: "Teclado mecánico",
-    stock: 2,
-  },
-  {
-    id: 2,
-    name: "Mouse inalámbrico",
-    stock: 3,
-  },
-  {
-    id: 3,
-    name: 'Monitor 24"',
-    stock: 1,
-  },
-];
+interface LowStockTableProps {
+  products: LowStockProduct[];
+}
 
-export default function LowStockTable() {
+export default function LowStockTable({
+  products,
+}: LowStockTableProps) {
   return (
     <div className={styles.container}>
       <div className={styles.header}>
