@@ -1,8 +1,33 @@
 import { AlertTriangle, Boxes, Tags } from "lucide-react";
 
-import StatCard from "../components/StatCard/StatCard";
 import LowStockTable from "../components/LowStockTable/LowStockTable";
+import StatCard from "../components/StatCard/StatCard";
+
 import styles from "./HomePage.module.css";
+
+interface LowStockProduct {
+  id: number;
+  name: string;
+  stock: number;
+}
+
+const lowStockProducts: LowStockProduct[] = [
+  {
+    id: 1,
+    name: "Teclado mecánico",
+    stock: 2,
+  },
+  {
+    id: 2,
+    name: "Mouse inalámbrico",
+    stock: 3,
+  },
+  {
+    id: 3,
+    name: 'Monitor 24"',
+    stock: 1,
+  },
+];
 
 export default function HomePage() {
   return (
@@ -64,7 +89,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <LowStockTable />
+      <LowStockTable products={lowStockProducts} />
     </div>
   );
 }
