@@ -5,13 +5,9 @@ import StatCard from "../components/StatCard/StatCard";
 
 import styles from "./HomePage.module.css";
 
-interface LowStockProduct {
-  id: number;
-  name: string;
-  stock: number;
-}
+import type { Product } from "../types/product";
 
-const lowStockProducts: LowStockProduct[] = [
+const lowStockProducts: Product[] = [
   {
     id: 1,
     name: "Teclado mecánico",

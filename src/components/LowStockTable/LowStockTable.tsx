@@ -1,15 +1,11 @@
 import { AlertTriangle } from "lucide-react";
 
+import type { Product } from "../../types/product";
+
 import styles from "./LowStockTable.module.css";
 
-interface LowStockProduct {
-  id: number;
-  name: string;
-  stock: number;
-}
-
 interface LowStockTableProps {
-  products: LowStockProduct[];
+  products: Product[];
 }
 
 export default function LowStockTable({
