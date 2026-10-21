@@ -1,5 +1,5 @@
-
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { getProducts } from "../services/productService";
 import {
   ArrowDown,
   ArrowUpDown,
@@ -13,6 +13,7 @@ import {
   SlidersHorizontal,
   Trash2,
 } from "lucide-react";
+
 
 import styles from "./ProductListPage.module.css";
 
@@ -155,6 +156,18 @@ function ProductListPage() {
     setStockFilter(value);
     setCurrentPage(1);
   };
+
+  useEffect(() => {
+  getProducts()
+    .then((page) => {
+      console.log("Productos recibidos:", page.content);
+      console.log("Total de productos:", page.totalElements);
+      console.log("Total de páginas:", page.totalPages);
+    })
+    .catch((error: unknown) => {
+      console.error("Error al consultar los productos:", error);
+    });
+}, []);
 
   return (
     <section className={styles.page}>
